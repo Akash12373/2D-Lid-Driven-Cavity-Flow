@@ -3,7 +3,7 @@
 A Physics-Informed Neural Network (PINN) implemented from scratch in PyTorch to solve the steady, incompressible 2D Navier–Stokes equations for classic lid-driven cavity flow ($Re = 100$)[cite: 1].
 
 ## 📂 Project Structure
-- `cavity.ipynb`: Complete workflow containing automatic differentiation gradients, PDE residual loss computation, boundary sampling, model training, and velocity/pressure field post-processing[cite: 1].
+- [cavity.ipynb](./cavity.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/<GITHUB_USERNAME>/<REPO_NAME>/blob/main/cavity.ipynb): Complete workflow containing automatic differentiation gradients, PDE residual loss computation, boundary sampling, model training, and velocity/pressure field post-processing[cite: 1].
 
 ## 🧠 Physics-Informed Formulation
 Rather than relying purely on simulation data, the network takes spatial coordinates $(x, y)$ as inputs and directly outputs predicted flow variables $[u, v, p]^T$:
@@ -27,7 +27,9 @@ Rather than relying purely on simulation data, the network takes spatial coordin
 - **Computational Cost Profiling:** Measures the overhead introduced by building the higher-order computational graph (`create_graph=True`) during the forward pass[cite: 1]. Studies the impact of dynamic interior collocation resampling on memory transfer latency and overall training time[cite: 1].
 
 ## 🛠️ Usage
-Clone the repository and open the notebook:
+Run directly in Google Colab using the badge above, or run locally:
 ```bash
+git clone [https://github.com/](https://github.com/)<GITHUB_USERNAME>/<REPO_NAME>.git
+cd <REPO_NAME>
 pip install torch matplotlib pandas
 jupyter notebook cavity.ipynb
